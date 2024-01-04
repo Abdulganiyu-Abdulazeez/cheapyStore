@@ -11,7 +11,7 @@
                             <h1 class="text-[#7FFF00]">Category: {{ cloths.category }}</h1>
                             <img class="w-full h-[35vh]" :src=cloths.image :alt="electronics" @click="detail(cloths)">
                         </div>
-                        <div class="info relative p-[1rem] w-full h-[40%] bg-[#7FFF00] text-black text-[20px] font-bold flex flex-cols gap-[2rem] rounded-b-[10px]">
+                        <div class="info relative p-[1rem] w-full h-[40%] bg-[#7FFF00] text-black  md:text-[20px] text-[15px] font-bold flex flex-cols gap-[2rem] rounded-b-[10px]">
                             <h1 class="text-[16px]">{{ cloths.title }}</h1>
                             <a class="w-fit rounded-[20px] no-underline absolute bottom-[1rem] text-black text-[14px] p-[0.5rem] font-bold bg-white" href="#">${{ cloths.price }}</a>
                         </div>
