@@ -77,14 +77,14 @@
                     <router-link to="/clothing/women"><a href="#" class="w-full md:w-fit px-[1rem] py-[0.51rem] max-[768px]:p-[0.5rem] text-[#7FFF00] border-[2px] border-solid border-[#7FFF00] rounded-[10px]">Women's Clothing</a></router-link>
                 </div>
             </div>
-            <div class="grid grid-cols-4 lg:gap-[3rem] md:gap-[2rem] gap-[1rem] max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 lg:px-[3rem] md:px-[2rem] px-[1rem] py-[1rem]">
+            <div class=" grid grid-cols-4 lg:gap-[3rem] md:gap-[2rem] gap-[1rem] max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 lg:px-[3rem] md:px-[2rem] px-[1rem] py-[1rem]">
                 <div class="w-full h-full" v-for="cloths in store" :key="cloths">
                     <div @click="params(cloths)" class="w-full h-[80vh] flex flex-col items-center" v-show="cloths.category === men">
                         <div class="w-full h-[60%] bg-white rounded-t-[10px] font-bold gap-[1rem] flex flex-col items-center p-[1rem]">
                             <h1 class="text-[#7FFF00]">Category: {{ cloths.category }}</h1>
                             <img class="w-full h-[35vh]" :src=cloths.image :alt="men" @click="detail(cloths)">
                         </div>
-                        <div class="info relative p-[1rem] w-full h-[40%] bg-[#7FFF00] text-black text-[20px] font-[900] flex flex-col gap-[2rem] gap-[2rem] ">
+                        <div class="info relative p-[1rem] w-full h-[40%] bg-[#7FFF00] text-black md:text-[20px] text-[15px] font-[900] flex flex-col gap-[2rem] gap-[2rem] ">
                             <h1>{{ cloths.title }}</h1>
                             <a href="#">${{ cloths.price }}</a>
                         </div>
@@ -106,9 +106,9 @@
                         <h1 class="text-[#7FFF00] font-bold text-[45px]">${{ price }}</h1>
                         <div class="flex items-center gap-[2rem]">
                             <div class="flex items-center p-[1rem] rounded-[10px] bg-gray-300 gap-[1rem]">
-                                <div @click="counting2" class="p-[4px] cursor-pointer flex items-center bg-white text-gray-300 hover:text-black font-bold text-[25px] rounded-[5px]">-</div>
+                                <div @click="counting2" class="p-[4px] w-[1rem] cursor-pointer flex items-center bg-white text-gray-300 hover:text-black font-bold text-[25px] rounded-[5px]">-</div>
                                 <p class="text-[#7FFF00] font-bold text-[24px]">{{ this.amount }}</p>
-                                <div @click="counting1" class="p-[4px] cursor-pointer flex items-center bg-white text-gray-300 hover:text-black font-bold text-[25px] rounded-[5px]">+</div>
+                                <div @click="counting1" class="p-[4px] w-[1rem] cursor-pointer flex items-center bg-white text-gray-300 hover:text-black font-bold text-[25px] rounded-[5px]">+</div>
                             </div>
                             <button @click="notification" class="bg-[#7FFF00] lg:text-[30px] md:text-[20px] text-[15px] text-white font-bold rounded-[20px] md:p-[1rem] p-[0.75rem]">
                                 <span class="addToCart">Add to cart</span>

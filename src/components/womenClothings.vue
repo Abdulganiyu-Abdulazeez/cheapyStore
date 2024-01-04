@@ -53,6 +53,12 @@
             change() {
                 this.$router.back;
                 this.details = true;
+            },
+            notification() {
+                this.notify++
+                cheapy().$state.notify = this.notify
+                console.log(this.notify)
+                return this.notify
             }
         }
     })
@@ -77,7 +83,7 @@
                             <h1 class="text-[#7FFF00]">Category: {{ cloths.category }}</h1>
                             <img class="w-full h-[35vh]" :src=cloths.image :alt="men" @click="detail(cloths)">
                         </div>
-                        <div class="info relative p-[1rem] w-full h-[40%] bg-[#7FFF00] text-black text-[20px] font-[900] flex flex-col gap-[2rem] gap-[2rem] ">
+                        <div class="info relative p-[1rem] w-full h-[40%] bg-[#7FFF00] text-black md:text-[20px] text-[15px] font-[900] flex flex-col gap-[2rem] gap-[2rem] ">
                             <h1>{{ cloths.title }}</h1>
                             <a href="#">${{ cloths.price }}</a>
                         </div>
@@ -98,12 +104,15 @@
                         <div class="text-black font-bold lg:text-xl md:text-[20px] text-[15px] md:text-start text-center">Description: {{ description }}</div>
                         <h1 class="text-[#7FFF00] font-bold text-[45px]">${{ price }}</h1>
                         <div class="flex items-center gap-[2rem]">
-                            <div class="flex items-center p-[1rem] rounded-[10px] bg-gray-300">
-                                <div @click="counting2" class="p-[8px] flex items-center bg-white text-gray-500 hover:text-black">-</div>
+                            <div class="flex items-center p-[1rem] rounded-[10px] bg-gray-300 gap-[1rem]">
+                                <div @click="counting2" class="p-[4px] cursor-pointer flex items-center bg-white text-gray-300 hover:text-black font-bold text-[25px] rounded-[5px]">-</div>
                                 <p class="text-[#7FFF00] font-bold text-[24px]">{{ this.amount }}</p>
-                                <div @click="counting1" class="p-[8px] flex items-center bg-white text-gray-500 hover:text-black">+</div>
+                                <div @click="counting1" class="p-[4px] cursor-pointer flex items-center bg-white text-gray-300 hover:text-black font-bold text-[25px] rounded-[5px]">+</div>
                             </div>
-                            <button class="bg-[#7FFF00] lg:text-[30px] md:text-[20px] text-[15px] text-white font-bold rounded-[20px] md:p-[1rem] p-[0.75rem]">Add to cart</button>
+                            <button @click="notification" class="bg-[#7FFF00] lg:text-[30px] md:text-[20px] text-[15px] text-white font-bold rounded-[20px] md:p-[1rem] p-[0.75rem]">
+                                <span class="addToCart">Add to cart</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#ffffff" d="M7 22q-.825 0-1.413-.588T5 20q0-.825.588-1.413T7 18q.825 0 1.413.588T9 20q0 .825-.588 1.413T7 22Zm10 0q-.825 0-1.413-.588T15 20q0-.825.588-1.413T17 18q.825 0 1.413.588T19 20q0 .825-.588 1.413T17 22ZM7 17q-1.125 0-1.7-.988t-.05-1.962L6.6 11.6L3 4H1.975q-.425 0-.7-.288T1 3q0-.425.288-.713T2 2h1.625q.275 0 .525.15t.375.425L5.2 4h14.75q.675 0 .925.5t-.025 1.05l-3.55 6.4q-.275.5-.725.775T15.55 13H8.1L7 15h11.025q.425 0 .7.288T19 16q0 .425-.288.713T18 17H7Z"/></svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -140,5 +149,19 @@
     .clothing a:hover {
         background-color: chartreuse;
         color: white;
+    }
+    .addToCart {
+        display: block;
+    }
+    button svg {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        .addToCart{
+            display: none;
+        }
+        button svg {
+            display: block;
+        }
     }
 </style>
