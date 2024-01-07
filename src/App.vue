@@ -1,10 +1,9 @@
 <script>
   import { defineComponent } from 'vue';
   import navbar from "./components/navbar.vue"
-  import banner from "./components/landing-page.vue"
   import store from "./store/store"
   export default defineComponent ({
-    components: {navbar, banner},
+    components: {navbar},
     data() {
       return {
         myComponent: 'banner',
