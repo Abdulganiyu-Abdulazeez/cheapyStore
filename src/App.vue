@@ -4,7 +4,7 @@
   import banner from "./components/landing-page.vue"
   import store from "./store/store"
   export default defineComponent ({
-    components: {navbar, banner, clothing, jewelery, electronics},
+    components: {navbar, banner},
     data() {
       return {
         myComponent: 'banner',
